@@ -6,6 +6,12 @@ from nocturne.contracts.neurons import (
     PopulationMetadata,
     UnitQuality,
 )
+from nocturne.contracts.recordings import (
+    RecordingMetadata,
+    RecordingProvenance,
+    RecordingSource,
+    SubjectMetadata,
+)
 from nocturne.contracts.time import BinConfig, TemporalGrid, TimeInterval
 
 __all__ = [
@@ -16,4 +22,8 @@ __all__ = [
     "NeuronRole",
     "NeuronMetadata",
     "PopulationMetadata",
+    "RecordingSource",
+    "SubjectMetadata",
+    "RecordingProvenance",
+    "RecordingMetadata",
 ]
