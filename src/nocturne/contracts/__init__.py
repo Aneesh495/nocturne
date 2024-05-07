@@ -13,6 +13,12 @@ from nocturne.contracts.recordings import (
     SubjectMetadata,
 )
 from nocturne.contracts.time import BinConfig, TemporalGrid, TimeInterval
+from nocturne.contracts.trials import (
+    BehavioralTrajectory,
+    TrialCollection,
+    TrialMetadata,
+    TrialType,
+)
 
 __all__ = [
     "TimeInterval",
@@ -26,4 +32,8 @@ __all__ = [
     "SubjectMetadata",
     "RecordingProvenance",
     "RecordingMetadata",
+    "TrialType",
+    "BehavioralTrajectory",
+    "TrialMetadata",
+    "TrialCollection",
 ]
