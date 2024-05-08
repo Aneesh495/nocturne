@@ -1,5 +1,6 @@
 """Contracts and schemas defining neural population data, time, masks, and splits."""
 
+from nocturne.contracts.masks import ObservationMasks
 from nocturne.contracts.neurons import (
     NeuronMetadata,
     NeuronRole,
@@ -36,4 +37,5 @@ __all__ = [
     "BehavioralTrajectory",
     "TrialMetadata",
     "TrialCollection",
+    "ObservationMasks",
 ]
