@@ -13,6 +13,7 @@ from nocturne.contracts.recordings import (
     RecordingSource,
     SubjectMetadata,
 )
+from nocturne.contracts.splits import DatasetSplit, SplitPartition, SplitType
 from nocturne.contracts.time import BinConfig, TemporalGrid, TimeInterval
 from nocturne.contracts.trials import (
     BehavioralTrajectory,
@@ -38,4 +39,7 @@ __all__ = [
     "TrialMetadata",
     "TrialCollection",
     "ObservationMasks",
+    "SplitType",
+    "SplitPartition",
+    "DatasetSplit",
 ]
