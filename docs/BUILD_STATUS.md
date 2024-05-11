@@ -14,7 +14,7 @@
 |---|---|---|---|---|
 | B01 | Versioned recording/trial/neuron/time/unit contracts | `src/nocturne/contracts/` | `tests/contracts/` | passed |
 | B02 | Bounded NWB/DANDI/NLB source acquisition and provenance | `src/nocturne/recordings/` | `tests/recordings/` | unverified |
-| B03 | Exact binning, alignment, validity, and spike-count accounting | `src/nocturne/binning/` | `tests/binning/` | unverified |
+| B03 | Exact binning, alignment, validity, and spike-count accounting | `src/nocturne/binning/` | `tests/binning/` | passed |
 | B04 | Official and grouped/chronological split auditing | `src/nocturne/recordings/splits.py` | `tests/recordings/` | passed (split contracts validated) |
 | B05 | Explicit observation/held-out/padding/forecast masks | `src/nocturne/contracts/masks.py` | `tests/contracts/` | passed |
 | B06 | Original independent Poisson-rate baseline | `src/nocturne/models/baselines/` | `tests/models/` | unverified |

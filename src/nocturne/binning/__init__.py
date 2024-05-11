@@ -9,6 +9,7 @@ from nocturne.binning.likelihood_math import (
     poisson_deviance,
     poisson_log_likelihood,
 )
+from nocturne.binning.rates import RateClippingStats, RateTransformer
 
 __all__ = [
     "BinnedSpikeCounts",
@@ -21,4 +22,6 @@ __all__ = [
     "poisson_log_likelihood",
     "poisson_deviance",
     "poisson_bits_per_spike",
+    "RateClippingStats",
+    "RateTransformer",
 ]
