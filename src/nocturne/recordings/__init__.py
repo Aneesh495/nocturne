@@ -5,6 +5,7 @@ from nocturne.recordings.base import BaseRecordingLoader, ProcessedRecording
 from nocturne.recordings.mc_maze import MCMazeAdapter
 from nocturne.recordings.mc_rtt import MCRTTAdapter
 from nocturne.recordings.nlb_eval import NLBEvaluationAdapter, NLBEvaluationTarget
+from nocturne.recordings.split_audit import SplitAuditReport, SplitAuditor
 
 __all__ = [
     "BaseRecordingLoader",
@@ -14,4 +15,6 @@ __all__ = [
     "Area2BumpAdapter",
     "NLBEvaluationAdapter",
     "NLBEvaluationTarget",
+    "SplitAuditReport",
+    "SplitAuditor",
 ]
