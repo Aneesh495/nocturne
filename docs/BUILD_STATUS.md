@@ -28,8 +28,8 @@
 | B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | unverified |
 | B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | unverified |
 | B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | unverified |
-| B17 | Original controlled circuits with known latent truth | `src/nocturne/synthetic/` | `tests/synthetic/` | unverified |
-| B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | unverified |
+| B17 | Original controlled circuits with known latent truth | `src/nocturne/synthetic/` | `tests/synthetic/` | passed |
+| B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | passed |
 | B19 | Independent bits-per-spike and likelihood recomputation | `src/nocturne/evaluation/` | `tests/evaluation/` | unverified |
 | B20 | Frozen train-only behavior/representation probes | `src/nocturne/evaluation/probes.py` | `tests/evaluation/` | unverified |
 | B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | unverified |
