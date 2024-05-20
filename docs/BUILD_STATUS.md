@@ -17,13 +17,13 @@
 | B03 | Exact binning, alignment, validity, and spike-count accounting | `src/nocturne/binning/` | `tests/binning/` | passed |
 | B04 | Official and grouped/chronological split auditing | `src/nocturne/recordings/splits.py` | `tests/recordings/` | passed |
 | B05 | Explicit observation/held-out/padding/forecast masks | `src/nocturne/contracts/masks.py` | `tests/contracts/` | passed |
-| B06 | Original independent Poisson-rate baseline | `src/nocturne/models/baselines/` | `tests/models/` | unverified |
-| B07 | Original low-rank point-process baseline | `src/nocturne/models/baselines/` | `tests/models/` | unverified |
-| B08 | Original linear/Poisson latent-state inference baseline | `src/nocturne/models/baselines/` | `tests/models/` | unverified |
+| B06 | Original independent Poisson-rate baseline | `src/nocturne/models/baselines/mean_rate.py` | `tests/models/` | passed |
+| B07 | Original low-rank point-process baseline | `src/nocturne/models/baselines/poisson_factor.py` | `tests/models/` | passed |
+| B08 | Original linear/Poisson latent-state inference baseline | `src/nocturne/models/baselines/plds.py` | `tests/models/` | passed |
 | B09 | Original variational nonlinear latent dynamics | `src/nocturne/models/vldm/` | `tests/models/` | unverified |
 | B10 | Explicit inferred-drive versus autonomous dynamics modes | `src/nocturne/models/vldm/` | `tests/models/` | unverified |
 | B11 | Original axial neuron/time masked attention model | `src/nocturne/models/attention/` | `tests/models/` | unverified |
-| B12 | Positive-rate readout and correct count likelihood | `src/nocturne/models/likelihoods.py` | `tests/models/` | unverified |
+| B12 | Positive-rate readout and correct count likelihood | `src/nocturne/models/likelihoods.py` | `tests/models/` | passed |
 | B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | unverified |
 | B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | unverified |
 | B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | unverified |
