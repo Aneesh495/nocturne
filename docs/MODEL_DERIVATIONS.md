@@ -65,3 +65,59 @@ Because $\ln(y_{t,n}!)$ appears identically in both numerator terms, it cancels:
 $$\ln P(y \mid \mu^{(\text{model})}) - \ln P(y \mid \mu^{(\text{ref})}) = y_{t,n} \ln\left(\frac{\mu_{t,n}^{(\text{model})}}{\mu_{t,n}^{(\text{ref})}}\right) - \left(\mu_{t,n}^{(\text{model})} - \mu_{t,n}^{(\text{ref})}\right)$$
 
 **Zero-Spike Denominator Contract**: If the total count of evaluated spikes $\sum_{(t,n) \in \mathcal{O}} y_{t,n} = 0$, the metric is mathematically undefined. Nocturne returns `None` rather than returning $\pm \infty$ or $0.0$.
+
+---
+
+## 2. Variational Nonlinear Latent Dynamics (VLDM)
+
+### 2.1 Generative Model and Prior Structure
+
+The generative process models high-dimensional population observations $Y \in \mathbb{N}_0^{T \times N}$ through a low-dimensional continuous dynamical trajectory $z(t) \in \mathbb{R}^D$ ($D \ll N$):
+
+1. **Initial State Prior**:
+   $$p(z_0) = \mathcal{N}(0, I_D)$$
+2. **Autonomous / Driven State Transitions**:
+   $$z_{t+1} = z_t + \Delta t \left( f_\theta(z_t) + B u_t \right) + w_t, \quad w_t \sim \mathcal{N}(0, \sigma_w^2 I_D)$$
+   where $f_\theta: \mathbb{R}^D \to \mathbb{R}^D$ is a Lipschitz-bounded neural vector field, $u_t \in \mathbb{R}^M$ is optional inferred external drive, and $B \in \mathbb{R}^{D \times M}$ is the input projection matrix.
+3. **Point-Process Observation Model**:
+   $$p(y_{t,n} \mid z_t) = \operatorname{Poisson}\left(\lambda_n(z_t) \Delta t\right), \quad \lambda_n(z_t) = \operatorname{softplus}\left(g_\psi(z_t)_n\right)$$
+
+### 2.2 Variational Posterior and Evidence Lower Bound (ELBO)
+
+The true posterior $p(z_{0:T} \mid Y_{1:T})$ is analytically intractable due to the nonlinear vector field $f_\theta$ and Poisson observation likelihood. Nocturne defines a structured variational family factorized into initial state inference and deterministic dynamic rollout:
+
+$$q(z_{0:T} \mid Y_{1:T}) = q_\phi(z_0 \mid Y_{1:T}) \prod_{t=0}^{T-1} p(z_{t+1} \mid z_t, u_t)$$
+
+where the recognition network parameterizes a diagonal Gaussian:
+
+$$q_\phi(z_0 \mid Y_{1:T}) = \mathcal{N}\left(\mu_0(Y_{1:T}), \operatorname{diag}(\sigma_0^2(Y_{1:T}))\right)$$
+
+Applying Jensen's inequality to the marginal log-evidence $\ln p(Y_{1:T})$:
+
+$$\begin{aligned}
+\ln p(Y_{1:T}) &\ge \mathbb{E}_{q_\phi(z_0 \mid Y)}\left[ \ln \frac{p(z_0) \prod_{t=1}^T p(y_t \mid z_t)}{q_\phi(z_0 \mid Y)} \right] \\
+&= \sum_{t=1}^T \mathbb{E}_{q}\left[ \ln p(y_t \mid z_t) \right] - \operatorname{KL}\left( q_\phi(z_0 \mid Y) \,\|\, p(z_0) \right)
+\end{aligned}$$
+
+Augmenting with an $L_2$ regularization penalty $\mathcal{R}(u) = \frac{\lambda_u}{B T} \sum_{t} \|u_t\|^2$ on inferred drive yields the training objective:
+
+$$\mathcal{L}_{\text{VLDM}} = -\sum_{t=1}^T \ln p(y_t \mid z_t) + \beta_{\text{KL}} \operatorname{KL}\left( q_\phi(z_0 \mid Y) \,\|\, p(z_0) \right) + \mathcal{R}(u)$$
+
+### 2.3 Analytic Initial State KL Divergence
+
+For prior $p(z_0) = \mathcal{N}(0, I_D)$ and posterior $q(z_0) = \mathcal{N}(\mu_0, \operatorname{diag}(\sigma_0^2))$:
+
+$$\operatorname{KL}(q \,\|\, p) = \frac{1}{2} \sum_{d=1}^D \left( \sigma_{0,d}^2 + \mu_{0,d}^2 - 1 - \ln \sigma_{0,d}^2 \right)$$
+
+This term is computed analytically in closed form with $\mathcal{O}(D)$ operations per sample.
+
+### 2.4 Identifiability Failure Mode of Inferred Drive
+
+A critical failure mode arises when the inferred drive network $u_t$ is unconstrained. Because $u_t$ varies at each time bin, the optimization can achieve high reconstruction log-likelihood by setting:
+
+$$B u_t \approx \frac{z_{t+1} - z_t}{\Delta t}$$
+
+This drives the autonomous velocity field $f_\theta(z_t) \to 0$, reducing the model to a glorified feedforward autoencoder that fails to learn the intrinsic vector fields or fixed points of the underlying neural circuit. Nocturne detects and reports this pathology using the autonomous ratio diagnostic:
+
+$$\rho = \frac{\|f_\theta(z)\|}{\|f_\theta(z)\| + \|B u\| + \epsilon}$$
+
