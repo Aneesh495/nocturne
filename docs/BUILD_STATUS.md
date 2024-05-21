@@ -22,7 +22,7 @@
 | B08 | Original linear/Poisson latent-state inference baseline | `src/nocturne/models/baselines/plds.py` | `tests/models/` | passed |
 | B09 | Original variational nonlinear latent dynamics | `src/nocturne/models/vldm/` | `tests/models/` | passed |
 | B10 | Explicit inferred-drive versus autonomous dynamics modes | `src/nocturne/models/vldm/` | `tests/models/` | passed |
-| B11 | Original axial neuron/time masked attention model | `src/nocturne/models/attention/` | `tests/models/` | unverified |
+| B11 | Original axial neuron/time masked attention model | `src/nocturne/models/attention/` | `tests/models/` | passed |
 | B12 | Positive-rate readout and correct count likelihood | `src/nocturne/models/likelihoods.py` | `tests/models/` | passed |
 | B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | unverified |
 | B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | unverified |

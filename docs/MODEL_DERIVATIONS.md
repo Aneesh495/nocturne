@@ -117,7 +117,52 @@ A critical failure mode arises when the inferred drive network $u_t$ is unconstr
 
 $$B u_t \approx \frac{z_{t+1} - z_t}{\Delta t}$$
 
-This drives the autonomous velocity field $f_\theta(z_t) \to 0$, reducing the model to a glorified feedforward autoencoder that fails to learn the intrinsic vector fields or fixed points of the underlying neural circuit. Nocturne detects and reports this pathology using the autonomous ratio diagnostic:
-
 $$\rho = \frac{\|f_\theta(z)\|}{\|f_\theta(z)\| + \|B u\| + \epsilon}$$
+
+---
+
+## 3. Axial Spatiotemporal Masked Attention (STA)
+
+### 3.1 Token Formulation and Embeddings
+
+Given a binned spike count matrix $Y \in \mathbb{N}_0^{B \times T \times N}$ and binary observation mask $M \in \{0, 1\}^{B \times T \times N}$, the token embedding for channel $n$ at time step $t$ is:
+
+$$h_{b,t,n}^{(0)} = W_{\text{in}} y_{b,t,n} \cdot M_{b,t,n} + [1 - M_{b,t,n}] e_{\text{mask}} + E_{\text{neuron}}[n] + E_{\text{time}}[t]$$
+
+where:
+- $W_{\text{in}} \in \mathbb{R}^{d \times 1}$ projects scalar counts to embedding space.
+- $e_{\text{mask}} \in \mathbb{R}^d$ is a learned mask token vector substituted for unobserved channels.
+- $E_{\text{neuron}} \in \mathbb{R}^{N \times d}$ is a learned neuron identity matrix.
+- $E_{\text{time}} \in \mathbb{R}^{T_{\max} \times d}$ is a learned temporal position embedding matrix.
+
+### 3.2 Complexity Factorization
+
+Full 2D spatiotemporal self-attention across all $(T \times N)$ tokens requires computing an attention matrix of size:
+
+$$\Omega_{\text{full}} \in \mathbb{R}^{(T \cdot N) \times (T \cdot N)}$$
+
+with quadratic time and memory complexity $\mathcal{O}(B \cdot T^2 N^2 \cdot d)$. For a 100-neuron recording across 500 bins, $(T \cdot N) = 50,000$ tokens, requiring 2.5 billion attention weights per layer.
+
+Axial spatiotemporal attention decomposes the joint operator into two rank-1 subspace projections:
+
+1. **Temporal Attention**: Applied along duration $T$ independently for each neuron $n$:
+   $$\text{Complexity: } \mathcal{O}(B \cdot N \cdot T^2 \cdot d)$$
+2. **Spatial Attention**: Applied across population $N$ independently at each time bin $t$:
+   $$\text{Complexity: } \mathcal{O}(B \cdot T \cdot N^2 \cdot d)$$
+
+The joint complexity is $\mathcal{O}(B \cdot d \cdot (N T^2 + T N^2))$, representing an asymptotic reduction factor of:
+
+$$\text{Reduction Factor} \approx \frac{T^2 N^2}{N T^2 + T N^2} = \frac{T N}{T + N}$$
+
+For $T = 500, N = 100$, this yields an approximate $83\times$ reduction in computational operations and activation memory.
+
+### 3.3 Causal Temporal Masking
+
+In online causal streaming and filtering regimes, temporal attention is constrained by an upper-triangular mask $A_{\text{causal}} \in \{0, -\infty\}^{T \times T}$:
+
+$$(A_{\text{causal}})_{i,j} = \begin{cases} 0 & \text{if } j \le i \\ -\infty & \text{if } j > i \end{cases}$$
+
+This guarantees exact prefix invariance:
+
+$$\frac{\partial h_{b,t,n}^{(L)}}{\partial y_{b,t',n'}} = 0 \quad \forall t' > t, \; \forall n, n'$$
 
