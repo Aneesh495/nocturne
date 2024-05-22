@@ -24,7 +24,7 @@
 | B10 | Explicit inferred-drive versus autonomous dynamics modes | `src/nocturne/models/vldm/` | `tests/models/` | passed |
 | B11 | Original axial neuron/time masked attention model | `src/nocturne/models/attention/` | `tests/models/` | passed |
 | B12 | Positive-rate readout and correct count likelihood | `src/nocturne/models/likelihoods.py` | `tests/models/` | passed |
-| B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | unverified |
+| B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | passed |
 | B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | unverified |
 | B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | unverified |
 | B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | unverified |
@@ -38,7 +38,7 @@
 | B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | unverified |
 | B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | unverified |
 | B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | unverified |
-| B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | unverified |
+| B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
 | B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | unverified |
 | B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | unverified |
 | B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | unverified |
