@@ -25,8 +25,8 @@
 | B11 | Original axial neuron/time masked attention model | `src/nocturne/models/attention/` | `tests/models/` | passed |
 | B12 | Positive-rate readout and correct count likelihood | `src/nocturne/models/likelihoods.py` | `tests/models/` | passed |
 | B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | passed |
-| B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | unverified |
-| B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | unverified |
+| B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | passed |
+| B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | passed |
 | B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | unverified |
 | B17 | Original controlled circuits with known latent truth | `src/nocturne/synthetic/` | `tests/synthetic/` | passed |
 | B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | passed |
@@ -35,7 +35,7 @@
 | B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | unverified |
 | B22 | Declared fixed-point/Jacobian/dynamics diagnostics | `src/nocturne/geometry/fixed_points.py` | `tests/geometry/` | unverified |
 | B23 | Three-seed public-recording comparison campaign | `src/nocturne/campaign/` | `tests/campaign/` | unverified |
-| B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | unverified |
+| B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | passed |
 | B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | unverified |
 | B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | unverified |
 | B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
@@ -57,7 +57,7 @@
 | BA04 | Original latent and attention models plus baselines trained with 3 seeds | Optimizer updates and raw histories | unverified |
 | BA05 | Every eligible official local test unit has frozen predictions; ≥1,000,000 valid neuron-bin observations | Public test evaluation pass | unverified |
 | BA06 | Positive public bits-per-spike learning gate on ≥2 datasets and synthetic improvement | Held-out BPS verification | unverified |
-| BA07 | ≥1,000 future-input/prefix/held-out perturbation cases; causal prefix invariance verified | Perturbation engine pass | unverified |
+| BA07 | ≥1,000 future-input/prefix/held-out perturbation cases; causal prefix invariance verified | Perturbation engine pass | passed |
 | BA08 | ≥5 prediction horizons and ≥5 neuron-dropout profiles evaluated | Forecast & dropout robustness matrix | unverified |
 | BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | unverified |
 | BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | unverified |
