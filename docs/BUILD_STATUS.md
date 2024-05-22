@@ -27,7 +27,7 @@
 | B13 | Real masked/variational training and validation selection | `src/nocturne/training/` | `tests/training/` | passed |
 | B14 | Separate smoothing, filtering, and forecasting contracts | `src/nocturne/inference/` | `tests/inference/` | passed |
 | B15 | Causal prefix-invariance and future-data leakage checks | `src/nocturne/inference/causality.py` | `tests/inference/` | passed |
-| B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | unverified |
+| B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | passed |
 | B17 | Original controlled circuits with known latent truth | `src/nocturne/synthetic/` | `tests/synthetic/` | passed |
 | B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | passed |
 | B19 | Independent bits-per-spike and likelihood recomputation | `src/nocturne/evaluation/` | `tests/evaluation/` | unverified |
@@ -41,7 +41,7 @@
 | B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
 | B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | unverified |
 | B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | unverified |
-| B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | unverified |
+| B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | passed |
 | B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | unverified |
 | B32 | Fresh acceptance and genuinely executed verifier controls | `src/nocturne/verification/` | `tests/verification/` | unverified |
 
@@ -61,7 +61,7 @@
 | BA08 | ≥5 prediction horizons and ≥5 neuron-dropout profiles evaluated | Forecast & dropout robustness matrix | unverified |
 | BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | unverified |
 | BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | unverified |
-| BA11 | 50 interruption cases, 100 malformed/gap cases, 60-min bounded stream run | Fault & benchmark verification | unverified |
+| BA11 | 50 interruption cases, 100 malformed/gap cases, 60-min bounded stream run | Fault & benchmark verification | passed |
 | BA12 | Genuine trained demo, complete docs, fresh evidence, ≥12 verifier negative controls | Acceptance bundle & verifier pass | unverified |
 
 ---
