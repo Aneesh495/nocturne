@@ -32,8 +32,8 @@
 | B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | passed |
 | B19 | Independent bits-per-spike and likelihood recomputation | `src/nocturne/evaluation/` | `tests/evaluation/` | unverified |
 | B20 | Frozen train-only behavior/representation probes | `src/nocturne/evaluation/probes.py` | `tests/evaluation/` | unverified |
-| B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | unverified |
-| B22 | Declared fixed-point/Jacobian/dynamics diagnostics | `src/nocturne/geometry/fixed_points.py` | `tests/geometry/` | unverified |
+| B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | passed |
+| B22 | Declared fixed-point/Jacobian/dynamics diagnostics | `src/nocturne/geometry/fixed_points.py` | `tests/geometry/` | passed |
 | B23 | Three-seed public-recording comparison campaign | `src/nocturne/campaign/` | `tests/campaign/` | unverified |
 | B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | passed |
 | B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | unverified |
@@ -59,7 +59,7 @@
 | BA06 | Positive public bits-per-spike learning gate on ≥2 datasets and synthetic improvement | Held-out BPS verification | unverified |
 | BA07 | ≥1,000 future-input/prefix/held-out perturbation cases; causal prefix invariance verified | Perturbation engine pass | passed |
 | BA08 | ≥5 prediction horizons and ≥5 neuron-dropout profiles evaluated | Forecast & dropout robustness matrix | unverified |
-| BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | unverified |
+| BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | passed |
 | BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | unverified |
 | BA11 | 50 interruption cases, 100 malformed/gap cases, 60-min bounded stream run | Fault & benchmark verification | passed |
 | BA12 | Genuine trained demo, complete docs, fresh evidence, ≥12 verifier negative controls | Acceptance bundle & verifier pass | unverified |
