@@ -39,7 +39,7 @@
 | B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | passed |
 | B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | unverified |
 | B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
-| B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | unverified |
+| B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | passed |
 | B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | passed |
 | B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | passed |
 | B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | unverified |
