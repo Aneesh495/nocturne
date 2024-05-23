@@ -30,17 +30,17 @@
 | B16 | Causal streaming state, reset, and checkpoint lifecycle | `src/nocturne/streaming/` | `tests/streaming/` | passed |
 | B17 | Original controlled circuits with known latent truth | `src/nocturne/synthetic/` | `tests/synthetic/` | passed |
 | B18 | Synthetic noise/dropout/input/misspecification regimes | `src/nocturne/synthetic/noise.py` | `tests/synthetic/` | passed |
-| B19 | Independent bits-per-spike and likelihood recomputation | `src/nocturne/evaluation/` | `tests/evaluation/` | unverified |
-| B20 | Frozen train-only behavior/representation probes | `src/nocturne/evaluation/probes.py` | `tests/evaluation/` | unverified |
+| B19 | Independent bits-per-spike and likelihood recomputation | `src/nocturne/evaluation/` | `tests/evaluation/` | passed |
+| B20 | Frozen train-only behavior/representation probes | `src/nocturne/evaluation/probes.py` | `tests/evaluation/` | passed |
 | B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | passed |
 | B22 | Declared fixed-point/Jacobian/dynamics diagnostics | `src/nocturne/geometry/fixed_points.py` | `tests/geometry/` | passed |
 | B23 | Three-seed public-recording comparison campaign | `src/nocturne/campaign/` | `tests/campaign/` | unverified |
 | B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | passed |
-| B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | unverified |
+| B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | passed |
 | B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | unverified |
 | B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
 | B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | unverified |
-| B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | unverified |
+| B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | passed |
 | B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | passed |
 | B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | unverified |
 | B32 | Fresh acceptance and genuinely executed verifier controls | `src/nocturne/verification/` | `tests/verification/` | unverified |
