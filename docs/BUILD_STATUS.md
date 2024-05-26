@@ -43,7 +43,7 @@
 | B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | passed |
 | B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | passed |
 | B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | unverified |
-| B32 | Fresh acceptance and genuinely executed verifier controls | `src/nocturne/verification/` | `tests/verification/` | unverified |
+| B32 | Fresh acceptance and genuinely executed verifier controls | `src/nocturne/verification/` | `tests/verification/` | passed |
 
 ---
 
@@ -62,7 +62,7 @@
 | BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | passed |
 | BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | unverified |
 | BA11 | 50 interruption cases, 100 malformed/gap cases, 60-min bounded stream run | Fault & benchmark verification | passed |
-| BA12 | Genuine trained demo, complete docs, fresh evidence, ≥12 verifier negative controls | Acceptance bundle & verifier pass | unverified |
+| BA12 | Genuine trained demo, complete docs, fresh evidence, ≥12 verifier negative controls | Acceptance bundle & verifier pass | passed |
 
 ---
 
