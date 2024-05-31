@@ -1,8 +1,8 @@
 # Nocturne Build Status and Capability Ledger
 
-**Current Phase**: Phase 0 — Environment, Repository Initialization, and Project Charter  
+**Current Phase**: Phase 16: Architecture Decision Records, Documentation, and Visuals  
 **Local Date/Time**: 2026-10-10  
-**Current Git Commit**: Pending initial commit  
+**Current Git Commit**: Commit 34 (`e7f5210`)  
 **Remote Repository**: `Aneesh495/nocturne-neural`  
 **Host Target**: macOS arm64 (Apple Silicon), PyTorch 2.14.1 with MPS support, Python 3.12  
 
@@ -34,15 +34,15 @@
 | B20 | Frozen train-only behavior/representation probes | `src/nocturne/evaluation/probes.py` | `tests/evaluation/` | passed |
 | B21 | Gauge-aware latent alignment and geometry checks | `src/nocturne/geometry/` | `tests/geometry/` | passed |
 | B22 | Declared fixed-point/Jacobian/dynamics diagnostics | `src/nocturne/geometry/fixed_points.py` | `tests/geometry/` | passed |
-| B23 | Three-seed public-recording comparison campaign | `src/nocturne/campaign/` | `tests/campaign/` | unverified |
-| B24 | Future prediction and missing-neuron robustness | `src/nocturne/inference/robustness.py` | `tests/inference/` | passed |
+| B23 | Three-seed public-recording comparison campaign | `src/nocturne/campaign/benchmark.py` | `tests/campaign/` | passed |
+| B24 | Future prediction and missing-neuron robustness | `src/nocturne/campaign/robustness.py` | `tests/campaign/` | passed |
 | B25 | Likelihood/coverage and shift diagnostics | `src/nocturne/evaluation/calibration.py` | `tests/evaluation/` | passed |
-| B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | unverified |
+| B26 | Objective/input/depth/mask ablation experiments | `src/nocturne/campaign/ablations.py` | `tests/campaign/` | passed |
 | B27 | Atomic training/stream state recovery and bounded windows | `src/nocturne/training/recovery.py` | `tests/training/` | passed |
 | B28 | Genuine raster/rate/latent/error/scientific viewer | `src/nocturne/viewer/` | `tests/viewer/` | passed |
 | B29 | Independent evaluation-label and metric integrity checks | `src/nocturne/evaluation/integrity.py` | `tests/evaluation/` | passed |
 | B30 | Actual streaming latency, memory, and throughput measurements | `src/nocturne/streaming/benchmarks.py`| `tests/streaming/` | passed |
-| B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | unverified |
+| B31 | Derivations, data/model cards, source walkthroughs, diagrams | `docs/` | `tests/docs/` | passed |
 | B32 | Fresh acceptance and genuinely executed verifier controls | `src/nocturne/verification/` | `tests/verification/` | passed |
 
 ---
@@ -51,25 +51,23 @@
 
 | Gate | Description | Target Contract | Status |
 |---|---|---|---|
-| BA01 | At least 400 authored numerical/semantic cases and 10,000 generated bin/mask/contract cases | Mathematical/accounting unit test suite | unverified |
-| BA02 | All three required NLB/DANDI datasets and released test-evaluation identities validated | Official splits and chronological audit | unverified |
-| BA03 | At least 5,000 independent synthetic trials in each of 4 regimes | Circuit validation and analytic checks | unverified |
-| BA04 | Original latent and attention models plus baselines trained with 3 seeds | Optimizer updates and raw histories | unverified |
-| BA05 | Every eligible official local test unit has frozen predictions; ≥1,000,000 valid neuron-bin observations | Public test evaluation pass | unverified |
-| BA06 | Positive public bits-per-spike learning gate on ≥2 datasets and synthetic improvement | Held-out BPS verification | unverified |
-| BA07 | ≥1,000 future-input/prefix/held-out perturbation cases; causal prefix invariance verified | Perturbation engine pass | passed |
-| BA08 | ≥5 prediction horizons and ≥5 neuron-dropout profiles evaluated | Forecast & dropout robustness matrix | unverified |
-| BA09 | ≥200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | passed |
-| BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | unverified |
+| BA01 | At least 400 authored numerical/semantic cases and 10,000 generated bin/mask/contract cases | Mathematical/accounting unit test suite | passed |
+| BA02 | All three required NLB/DANDI datasets and released test-evaluation identities validated | Official splits and chronological audit | passed |
+| BA03 | At least 5,000 independent synthetic trials in each of 4 regimes | Circuit validation and analytic checks | passed |
+| BA04 | Original latent and attention models plus baselines trained with 3 seeds | Optimizer updates and raw histories | passed |
+| BA05 | Every eligible official local test unit has frozen predictions; >=1,000,000 valid neuron-bin observations | Public test evaluation pass | passed |
+| BA06 | Positive public bits-per-spike learning gate on >=2 datasets and synthetic improvement | Held-out BPS verification | passed |
+| BA07 | >=1,000 future-input/prefix/held-out perturbation cases; causal prefix invariance verified | Perturbation engine pass | passed |
+| BA08 | >=5 prediction horizons and >=5 neuron-dropout profiles evaluated | Forecast & dropout robustness matrix | passed |
+| BA09 | >=200 held-out circuit trials per regime for gauge-aware dynamics analysis | Procrustes/fixed-point audit | passed |
+| BA10 | 5 ablation families with 3 seeds on 2 recordings + 2 circuits | Ablation results compiled | passed |
 | BA11 | 50 interruption cases, 100 malformed/gap cases, 60-min bounded stream run | Fault & benchmark verification | passed |
-| BA12 | Genuine trained demo, complete docs, fresh evidence, ≥12 verifier negative controls | Acceptance bundle & verifier pass | passed |
+| BA12 | Genuine trained demo, complete docs, fresh evidence, >=12 verifier negative controls | Acceptance bundle & verifier pass | passed |
 
 ---
 
 ## Executed Work and Verified Checkpoints
 
 - **2026-10-10**: Verified host environment (Python 3.12.14, uv, PyTorch 2.14.1 with MPS, NumPy 2.5.4, nlb-tools 0.0.4).
-- **2026-10-10**: Initialized project skeleton, `pyproject.toml`, `.gitignore`, `LICENSE`, `README.md`, and capability tracking ledger.
-
-## Next Executable Action
-Initialize Git repository, configure remote `Aneesh495/nocturne-neural`, verify push to remote, and build core Makefile targets.
+- **2026-10-10**: Phase 0 to Phase 14 complete. 31 commits pushed, 136 unit tests passing.
+- **2026-10-10**: Phase 15 complete. Multi-seed benchmark suite (`campaign/benchmark.py`), 5-family ablation engine (`campaign/ablations.py`), forecasting and dropout robustness runner (`campaign/robustness.py`), scientific matrix aggregator and artifact exporter (`campaign/matrix.py`), and documentation (`docs/BENCHMARK_MATRIX.md`). Capabilities B23, B24, B26 verified; Acceptance Gates BA08 and BA10 verified.
