@@ -22,6 +22,14 @@ from nocturne.geometry.audit import (
     GeometricDivergenceReport,
     PredictionStructureDivergenceAudit,
 )
+from nocturne.geometry.curvature import (
+    CurvatureAnalyzer,
+    TrajectoryCurvatureResult,
+)
+from nocturne.geometry.tangent import (
+    TangentSpaceEstimator,
+    TangentSpaceResult,
+)
 
 __all__ = [
     "ProcrustesAlignmentResult",
@@ -34,4 +42,8 @@ __all__ = [
     "JacobianAnalyzer",
     "GeometricDivergenceReport",
     "PredictionStructureDivergenceAudit",
+    "CurvatureAnalyzer",
+    "TrajectoryCurvatureResult",
+    "TangentSpaceEstimator",
+    "TangentSpaceResult",
 ]
