@@ -6,6 +6,11 @@ from nocturne.models.vldm.diagnostics import DynamicsAuditor, DynamicsDriveAudit
 from nocturne.models.vldm.drive import InferredDriveNetwork
 from nocturne.models.vldm.elbo import VLDMELBOCalculator
 from nocturne.models.vldm.encoder import ObservationEncoder
+from nocturne.models.vldm.flows import (
+    NormalizingFlowPrior,
+    PlanarFlow,
+    RadialFlow,
+)
 from nocturne.models.vldm.model import VariationalLatentDynamicsModel
 from nocturne.models.vldm.neural_ode import (
     AdaptiveDormandPrince54Integrator,
@@ -29,4 +34,7 @@ __all__ = [
     "ContinuousLatentODESolver",
     "ODESolverStats",
     "SymplecticVerletIntegrator",
+    "PlanarFlow",
+    "RadialFlow",
+    "NormalizingFlowPrior",
 ]
