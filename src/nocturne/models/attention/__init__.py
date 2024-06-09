@@ -17,6 +17,10 @@ from nocturne.models.attention.rotary import (
     ContinuousRotaryEmbedding,
     rotate_half,
 )
+from nocturne.models.attention.sparse_spatial import (
+    ElectrodeAdjacencyGraph,
+    SparseSpatialAttention,
+)
 
 __all__ = [
     "AttentionConfig",
@@ -30,4 +34,6 @@ __all__ = [
     "SpatiotemporalAttentionModel",
     "ContinuousRotaryEmbedding",
     "rotate_half",
+    "ElectrodeAdjacencyGraph",
+    "SparseSpatialAttention",
 ]
