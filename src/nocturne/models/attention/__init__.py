@@ -13,6 +13,10 @@ from nocturne.models.attention.routing import (
     generate_forecasting_mask,
 )
 from nocturne.models.attention.model import SpatiotemporalAttentionModel
+from nocturne.models.attention.rotary import (
+    ContinuousRotaryEmbedding,
+    rotate_half,
+)
 
 __all__ = [
     "AttentionConfig",
@@ -24,4 +28,6 @@ __all__ = [
     "generate_cosmoothing_mask",
     "generate_forecasting_mask",
     "SpatiotemporalAttentionModel",
+    "ContinuousRotaryEmbedding",
+    "rotate_half",
 ]
