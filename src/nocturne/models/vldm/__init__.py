@@ -7,6 +7,12 @@ from nocturne.models.vldm.drive import InferredDriveNetwork
 from nocturne.models.vldm.elbo import VLDMELBOCalculator
 from nocturne.models.vldm.encoder import ObservationEncoder
 from nocturne.models.vldm.model import VariationalLatentDynamicsModel
+from nocturne.models.vldm.neural_ode import (
+    AdaptiveDormandPrince54Integrator,
+    ContinuousLatentODESolver,
+    ODESolverStats,
+    SymplecticVerletIntegrator,
+)
 from nocturne.models.vldm.transitions import LatentTransitionModel
 
 __all__ = [
@@ -19,4 +25,8 @@ __all__ = [
     "VariationalLatentDynamicsModel",
     "DynamicsAuditor",
     "DynamicsDriveAudit",
+    "AdaptiveDormandPrince54Integrator",
+    "ContinuousLatentODESolver",
+    "ODESolverStats",
+    "SymplecticVerletIntegrator",
 ]
