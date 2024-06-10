@@ -9,6 +9,10 @@ from nocturne.binning.likelihood_math import (
     poisson_deviance,
     poisson_log_likelihood,
 )
+from nocturne.binning.point_process_glm import (
+    PointProcessGLM,
+    RaisedCosineBasis,
+)
 from nocturne.binning.rates import RateClippingStats, RateTransformer
 
 __all__ = [
@@ -24,4 +28,6 @@ __all__ = [
     "poisson_bits_per_spike",
     "RateClippingStats",
     "RateTransformer",
+    "PointProcessGLM",
+    "RaisedCosineBasis",
 ]
