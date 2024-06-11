@@ -14,6 +14,10 @@ from nocturne.binning.point_process_glm import (
     RaisedCosineBasis,
 )
 from nocturne.binning.rates import RateClippingStats, RateTransformer
+from nocturne.binning.spectral import (
+    MultitaperSpectralEstimator,
+    SpectralDensityResult,
+)
 
 __all__ = [
     "BinnedSpikeCounts",
@@ -30,4 +34,6 @@ __all__ = [
     "RateTransformer",
     "PointProcessGLM",
     "RaisedCosineBasis",
+    "MultitaperSpectralEstimator",
+    "SpectralDensityResult",
 ]
