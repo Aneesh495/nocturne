@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from nocturne.models.likelihoods import PoissonLoss
+from nocturne.binning.likelihood_math import get_log_factorial
 
 
 class RaisedCosineBasis:
@@ -111,8 +111,6 @@ class PointProcessGLM(nn.Module):
                 torch.randn(num_channels, num_bases) * 0.01
             )
 
-        self.loss_fn = PoissonLoss(bin_width_s=bin_width_s)
-
     def get_effective_filters(self) -> torch.Tensor:
         """Expand basis weights to full temporal filters.
 
@@ -174,4 +172,17 @@ class PointProcessGLM(nn.Module):
     ) -> torch.Tensor:
         """Compute Poisson negative log-likelihood loss for training."""
         rates_hz = self.forward(counts)
-        return self.loss_fn.forward_from_rates(rates_hz, counts, mask=mask)
+        dt = self.bin_width_s
+        expected_counts = torch.clamp(rates_hz * dt, min=1e-8)
+        log_fact = torch.tensor(
+            get_log_factorial(counts.detach().cpu().numpy()),
+            dtype=expected_counts.dtype,
+            device=counts.device,
+        )
+        # NLL element: lambda * dt - y * ln(lambda * dt) + ln(y!)
+        nll_element = expected_counts - (counts * torch.log(expected_counts)) + log_fact
+        if mask is not None:
+            nll_element = nll_element * mask.float()
+            denom = torch.clamp(mask.float().sum(), min=1.0)
+            return nll_element.sum() / denom
+        return nll_element.mean()

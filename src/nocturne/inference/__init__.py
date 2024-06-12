@@ -18,6 +18,10 @@ from nocturne.inference.robustness import (
     RobustnessReport,
     NeuronDropoutAuditor,
 )
+from nocturne.inference.ensembling import (
+    DeepRateEnsemble,
+    EnsemblePredictionResult,
+)
 
 __all__ = [
     "InferenceMode",
@@ -30,4 +34,6 @@ __all__ = [
     "CausalLeakageAuditor",
     "RobustnessReport",
     "NeuronDropoutAuditor",
+    "DeepRateEnsemble",
+    "EnsemblePredictionResult",
 ]
