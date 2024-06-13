@@ -22,6 +22,10 @@ from nocturne.inference.ensembling import (
     DeepRateEnsemble,
     EnsemblePredictionResult,
 )
+from nocturne.inference.online_kalman import (
+    PointProcessEKF,
+    PointProcessKalmanState,
+)
 
 __all__ = [
     "InferenceMode",
@@ -36,4 +40,6 @@ __all__ = [
     "NeuronDropoutAuditor",
     "DeepRateEnsemble",
     "EnsemblePredictionResult",
+    "PointProcessEKF",
+    "PointProcessKalmanState",
 ]
