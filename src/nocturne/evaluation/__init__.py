@@ -22,6 +22,11 @@ from nocturne.evaluation.integrity import (
     EvaluationIntegrityReport,
     EvaluationLabelIntegrityAuditor,
 )
+from nocturne.evaluation.cross_condition import (
+    ConditionMetricRecord,
+    CrossConditionEvaluator,
+    CrossConditionResult,
+)
 
 __all__ = [
     "LikelihoodSummary",
@@ -34,4 +39,7 @@ __all__ = [
     "DispersionAndCoverageAuditor",
     "EvaluationIntegrityReport",
     "EvaluationLabelIntegrityAuditor",
+    "ConditionMetricRecord",
+    "CrossConditionEvaluator",
+    "CrossConditionResult",
 ]
