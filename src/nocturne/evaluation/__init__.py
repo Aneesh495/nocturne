@@ -27,6 +27,10 @@ from nocturne.evaluation.cross_condition import (
     CrossConditionEvaluator,
     CrossConditionResult,
 )
+from nocturne.evaluation.information import (
+    MutualInformationEstimator,
+    MutualInformationResult,
+)
 
 __all__ = [
     "LikelihoodSummary",
@@ -42,4 +46,6 @@ __all__ = [
     "ConditionMetricRecord",
     "CrossConditionEvaluator",
     "CrossConditionResult",
+    "MutualInformationEstimator",
+    "MutualInformationResult",
 ]
