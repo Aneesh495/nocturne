@@ -19,6 +19,10 @@ from nocturne.streaming.benchmarks import (
     StreamingBenchmarkMetrics,
     StreamingBenchmarkRunner,
 )
+from nocturne.streaming.closed_loop import (
+    ClosedLoopStimulator,
+    StimulationEvent,
+)
 
 __all__ = [
     "StreamingBufferState",
@@ -30,4 +34,6 @@ __all__ = [
     "StreamFaultHandler",
     "StreamingBenchmarkMetrics",
     "StreamingBenchmarkRunner",
+    "ClosedLoopStimulator",
+    "StimulationEvent",
 ]
