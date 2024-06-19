@@ -7,6 +7,7 @@ from nocturne.viewer.phase_portrait import PhasePortraitVisualizer
 from nocturne.viewer.streaming_monitor import StreamingMonitorVisualizer
 from nocturne.viewer.dashboard import DashboardVisualizer
 from nocturne.viewer.spectrogram import SpectrogramVisualizer
+from nocturne.viewer.manifold_mesh import ManifoldMeshVisualizer
 
 __all__ = [
     "RasterVisualizer",
@@ -14,4 +15,6 @@ __all__ = [
     "StreamingMonitorVisualizer",
     "DashboardVisualizer",
     "SpectrogramVisualizer",
+    "ManifoldMeshVisualizer",
 ]
+
