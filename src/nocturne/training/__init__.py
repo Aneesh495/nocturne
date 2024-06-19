@@ -17,6 +17,7 @@ from nocturne.training.checkpoint import (
 from nocturne.training.history import TrainingHistory
 from nocturne.training.recovery import TrainingRecovery
 from nocturne.training.trainer import NeuralDynamicsTrainer
+from nocturne.training.curriculum import CurriculumScheduler, CurriculumState
 
 __all__ = [
     "TrainingConfig",
@@ -31,4 +32,7 @@ __all__ = [
     "TrainingHistory",
     "TrainingRecovery",
     "NeuralDynamicsTrainer",
+    "CurriculumScheduler",
+    "CurriculumState",
 ]
+
