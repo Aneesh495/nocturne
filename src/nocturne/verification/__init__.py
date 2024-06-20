@@ -15,6 +15,11 @@ from nocturne.verification.acceptance import (
     AcceptanceBundleGenerator,
     AcceptanceBundleReport,
 )
+from nocturne.verification.synthetic_falsification import (
+    AdversarialAttractorFalsifier,
+    FalsificationResult,
+    FalsificationReport,
+)
 
 __all__ = [
     "ControlResult",
@@ -24,4 +29,8 @@ __all__ = [
     "VerificationCheckResult",
     "AcceptanceBundleGenerator",
     "AcceptanceBundleReport",
+    "AdversarialAttractorFalsifier",
+    "FalsificationResult",
+    "FalsificationReport",
 ]
+
