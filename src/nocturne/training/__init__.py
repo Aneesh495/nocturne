@@ -18,6 +18,11 @@ from nocturne.training.history import TrainingHistory
 from nocturne.training.recovery import TrainingRecovery
 from nocturne.training.trainer import NeuralDynamicsTrainer
 from nocturne.training.curriculum import CurriculumScheduler, CurriculumState
+from nocturne.training.distillation import (
+    DistillationLoss,
+    DistillationLossOutput,
+    KnowledgeDistiller,
+)
 
 __all__ = [
     "TrainingConfig",
@@ -34,5 +39,9 @@ __all__ = [
     "NeuralDynamicsTrainer",
     "CurriculumScheduler",
     "CurriculumState",
+    "DistillationLoss",
+    "DistillationLossOutput",
+    "KnowledgeDistiller",
 ]
+
 

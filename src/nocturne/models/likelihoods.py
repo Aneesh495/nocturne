@@ -36,6 +36,15 @@ class PoissonLoss(nn.Module):
         self.eps = eps
         self.log_bin_width = math.log(bin_width_s)
 
+    def forward(
+        self,
+        rates_hz: torch.Tensor,
+        targets: torch.Tensor,
+        mask: Optional[torch.Tensor] = None,
+    ) -> torch.Tensor:
+        """Default forward computes Poisson NLL from rates in Hz."""
+        return self.forward_from_rates(rates_hz=rates_hz, targets=targets, mask=mask)
+
     def forward_from_rates(
         self,
         rates_hz: torch.Tensor,
