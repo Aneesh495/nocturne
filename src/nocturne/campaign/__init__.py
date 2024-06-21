@@ -30,6 +30,11 @@ from nocturne.campaign.robustness import (
     RobustnessCampaignResult,
     RobustnessCampaignRunner,
 )
+from nocturne.campaign.sensitivity import (
+    HyperparameterSensitivitySweep,
+    SensitivityPoint,
+    SensitivityCurve,
+)
 
 __all__ = [
     "AblationConfig",
@@ -48,4 +53,8 @@ __all__ = [
     "HorizonPoint",
     "RobustnessCampaignResult",
     "RobustnessCampaignRunner",
+    "HyperparameterSensitivitySweep",
+    "SensitivityPoint",
+    "SensitivityCurve",
 ]
+
