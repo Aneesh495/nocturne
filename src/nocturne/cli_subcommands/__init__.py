@@ -11,6 +11,11 @@ from nocturne.cli_subcommands.cmd_verify import (
     run_verify_command,
     add_verify_arguments,
 )
+from nocturne.cli_subcommands.cmd_acceptance import (
+    run_acceptance_command,
+    add_acceptance_arguments,
+    verify_bundle_integrity,
+)
 
 __all__ = [
     "probe_environment",
@@ -19,6 +24,10 @@ __all__ = [
     "add_synthetic_arguments",
     "run_verify_command",
     "add_verify_arguments",
+    "run_acceptance_command",
+    "add_acceptance_arguments",
+    "verify_bundle_integrity",
 ]
+
 
 
