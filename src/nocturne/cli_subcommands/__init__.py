@@ -16,6 +16,10 @@ from nocturne.cli_subcommands.cmd_acceptance import (
     add_acceptance_arguments,
     verify_bundle_integrity,
 )
+from nocturne.cli_subcommands.cmd_benchmark import (
+    run_benchmark_command,
+    add_benchmark_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -27,7 +31,10 @@ __all__ = [
     "run_acceptance_command",
     "add_acceptance_arguments",
     "verify_bundle_integrity",
+    "run_benchmark_command",
+    "add_benchmark_arguments",
 ]
+
 
 
 
