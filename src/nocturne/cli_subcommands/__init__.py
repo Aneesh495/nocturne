@@ -24,6 +24,10 @@ from nocturne.cli_subcommands.cmd_ablate import (
     run_ablation_command,
     add_ablation_arguments,
 )
+from nocturne.cli_subcommands.cmd_stream import (
+    run_stream_command,
+    add_stream_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -39,7 +43,10 @@ __all__ = [
     "add_benchmark_arguments",
     "run_ablation_command",
     "add_ablation_arguments",
+    "run_stream_command",
+    "add_stream_arguments",
 ]
+
 
 
 
