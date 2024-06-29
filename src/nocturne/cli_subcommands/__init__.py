@@ -28,6 +28,10 @@ from nocturne.cli_subcommands.cmd_stream import (
     run_stream_command,
     add_stream_arguments,
 )
+from nocturne.cli_subcommands.cmd_raster import (
+    run_raster_command,
+    add_raster_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -45,7 +49,10 @@ __all__ = [
     "add_ablation_arguments",
     "run_stream_command",
     "add_stream_arguments",
+    "run_raster_command",
+    "add_raster_arguments",
 ]
+
 
 
 
