@@ -32,6 +32,10 @@ from nocturne.cli_subcommands.cmd_raster import (
     run_raster_command,
     add_raster_arguments,
 )
+from nocturne.cli_subcommands.cmd_phase_portrait import (
+    run_phase_portrait_command,
+    add_phase_portrait_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -51,7 +55,10 @@ __all__ = [
     "add_stream_arguments",
     "run_raster_command",
     "add_raster_arguments",
+    "run_phase_portrait_command",
+    "add_phase_portrait_arguments",
 ]
+
 
 
 
