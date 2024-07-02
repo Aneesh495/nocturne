@@ -40,6 +40,10 @@ from nocturne.cli_subcommands.cmd_matrix import (
     run_matrix_command,
     add_matrix_arguments,
 )
+from nocturne.cli_subcommands.cmd_falsify import (
+    run_falsify_command,
+    add_falsify_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -63,7 +67,10 @@ __all__ = [
     "add_phase_portrait_arguments",
     "run_matrix_command",
     "add_matrix_arguments",
+    "run_falsify_command",
+    "add_falsify_arguments",
 ]
+
 
 
 
