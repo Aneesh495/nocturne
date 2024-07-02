@@ -36,6 +36,10 @@ from nocturne.cli_subcommands.cmd_phase_portrait import (
     run_phase_portrait_command,
     add_phase_portrait_arguments,
 )
+from nocturne.cli_subcommands.cmd_matrix import (
+    run_matrix_command,
+    add_matrix_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -57,7 +61,10 @@ __all__ = [
     "add_raster_arguments",
     "run_phase_portrait_command",
     "add_phase_portrait_arguments",
+    "run_matrix_command",
+    "add_matrix_arguments",
 ]
+
 
 
 
