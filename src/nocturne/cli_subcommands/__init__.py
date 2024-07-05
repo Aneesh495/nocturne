@@ -48,6 +48,10 @@ from nocturne.cli_subcommands.cmd_sensitivity import (
     run_sensitivity_command,
     add_sensitivity_arguments,
 )
+from nocturne.cli_subcommands.cmd_spectrogram import (
+    run_spectrogram_command,
+    add_spectrogram_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -75,7 +79,10 @@ __all__ = [
     "add_falsify_arguments",
     "run_sensitivity_command",
     "add_sensitivity_arguments",
+    "run_spectrogram_command",
+    "add_spectrogram_arguments",
 ]
+
 
 
 
