@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+from nocturne.workflows.generalization_campaign import (
+    GeneralizationCampaignResult,
+    run_generalization_campaign,
+)
 from nocturne.workflows.manifold_geometry import (
     ManifoldGeometryWorkflowResult,
     run_manifold_geometry_workflow,
@@ -16,9 +20,11 @@ from nocturne.workflows.synthetic_pipeline import (
 )
 
 __all__ = [
+    "GeneralizationCampaignResult",
     "ManifoldGeometryWorkflowResult",
     "StreamingSimulationResult",
     "SyntheticPipelineResult",
+    "run_generalization_campaign",
     "run_manifold_geometry_workflow",
     "run_streaming_simulation",
     "run_synthetic_pipeline",
