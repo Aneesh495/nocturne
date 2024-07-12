@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+from nocturne.workflows.distillation_workflow import (
+    DistillationWorkflowResult,
+    run_distillation_workflow,
+)
 from nocturne.workflows.generalization_campaign import (
     GeneralizationCampaignResult,
     run_generalization_campaign,
@@ -20,10 +24,12 @@ from nocturne.workflows.synthetic_pipeline import (
 )
 
 __all__ = [
+    "DistillationWorkflowResult",
     "GeneralizationCampaignResult",
     "ManifoldGeometryWorkflowResult",
     "StreamingSimulationResult",
     "SyntheticPipelineResult",
+    "run_distillation_workflow",
     "run_generalization_campaign",
     "run_manifold_geometry_workflow",
     "run_streaming_simulation",
