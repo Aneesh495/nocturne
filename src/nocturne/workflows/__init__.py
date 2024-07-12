@@ -14,6 +14,10 @@ from nocturne.workflows.manifold_geometry import (
     ManifoldGeometryWorkflowResult,
     run_manifold_geometry_workflow,
 )
+from nocturne.workflows.reproducibility_audit import (
+    ReproducibilityAuditResult,
+    run_reproducibility_audit,
+)
 from nocturne.workflows.streaming_simulation import (
     StreamingSimulationResult,
     run_streaming_simulation,
@@ -27,11 +31,13 @@ __all__ = [
     "DistillationWorkflowResult",
     "GeneralizationCampaignResult",
     "ManifoldGeometryWorkflowResult",
+    "ReproducibilityAuditResult",
     "StreamingSimulationResult",
     "SyntheticPipelineResult",
     "run_distillation_workflow",
     "run_generalization_campaign",
     "run_manifold_geometry_workflow",
+    "run_reproducibility_audit",
     "run_streaming_simulation",
     "run_synthetic_pipeline",
 ]
