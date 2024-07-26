@@ -56,6 +56,10 @@ from nocturne.cli_subcommands.cmd_manifold import (
     run_manifold_command,
     add_manifold_arguments,
 )
+from nocturne.cli_subcommands.cmd_workflow import (
+    run_workflow_command,
+    add_workflow_arguments,
+)
 
 __all__ = [
     "probe_environment",
@@ -87,17 +91,6 @@ __all__ = [
     "add_spectrogram_arguments",
     "run_manifold_command",
     "add_manifold_arguments",
+    "run_workflow_command",
+    "add_workflow_arguments",
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
