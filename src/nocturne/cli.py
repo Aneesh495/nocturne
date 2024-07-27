@@ -59,6 +59,10 @@ from nocturne.cli_subcommands.cmd_manifold import (
     add_manifold_arguments,
     run_manifold_command,
 )
+from nocturne.cli_subcommands.cmd_workflow import (
+    add_workflow_arguments,
+    run_workflow_command,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -128,6 +132,10 @@ def build_parser() -> argparse.ArgumentParser:
     # manifold
     p_man = subparsers.add_parser("manifold", help="Render 3D isometric latent manifold orbit and surface mesh vector SVG")
     add_manifold_arguments(p_man)
+
+    # workflow
+    p_work = subparsers.add_parser("workflow", help="Execute automated end-to-end scientific laboratory workflows")
+    add_workflow_arguments(p_work)
 
     return parser
 
@@ -238,6 +246,16 @@ def main(args: Optional[List[str]] = None) -> int:
             azimuth_deg=parsed.azimuth,
             duration_s=parsed.duration,
             output_path=parsed.output,
+        )
+    elif cmd == "workflow":
+        return run_workflow_command(
+            name=parsed.name,
+            num_trials=parsed.trials,
+            num_neurons=parsed.neurons,
+            duration_s=parsed.duration,
+            bin_width_ms=parsed.bin_width_ms,
+            seed=parsed.seed,
+            output_svg=parsed.output_svg,
         )
     else:
         print(f"Unknown subcommand: {cmd}")
