@@ -1,0 +1,22 @@
+{
+  "ENVIRONMENT.json": {
+    "sha256": "2d17a2bbfc27922e95529b27f4edf91607c09dd14b0e21cc55a7293e9103d714",
+    "size_bytes": 377
+  },
+  "SOURCE_INPUTS.json": {
+    "sha256": "2bb8b028c63bc4f69106e099a330e9bc61f1a2399b5eeaecc84c474db3d312d1",
+    "size_bytes": 993
+  },
+  "DATASETS.json": {
+    "sha256": "18a496bfff9bc8a61a062304cf2c63ef7b756b80584dd62449513c2c239cdbcf",
+    "size_bytes": 1214
+  },
+  "EVALUATION_FINGERPRINTS.json": {
+    "sha256": "38a543dc526f9adf0cd098e55e38180d2a8f00132783e19ed0ff774ad1ca00a0",
+    "size_bytes": 682
+  },
+  "SYSTEM_VERIFICATION.json": {
+    "sha256": "9a2e3642225dc92594a6a9d2501b7ffd41387e35880f5c57da5fe50c8f7b9c28",
+    "size_bytes": 7075
+  }
+}

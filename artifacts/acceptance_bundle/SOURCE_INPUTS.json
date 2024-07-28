@@ -1,0 +1,37 @@
+{
+  "datasets": [
+    {
+      "name": "MC_Maze",
+      "dandi_dandiset_id": "000128",
+      "nlb_identifier": "mc_maze",
+      "license": "CC-BY-4.0",
+      "species": "Macaca mulatta",
+      "task": "Delayed Center-Out Reaching with Maze Barriers",
+      "primary_area": "M1/PMd"
+    },
+    {
+      "name": "MC_RTT",
+      "dandi_dandiset_id": "000129",
+      "nlb_identifier": "mc_rtt",
+      "license": "CC-BY-4.0",
+      "species": "Macaca mulatta",
+      "task": "Continuous Random Target Pursuit Tracking",
+      "primary_area": "M1"
+    },
+    {
+      "name": "Area2_Bump",
+      "dandi_dandiset_id": "000127",
+      "nlb_identifier": "area2_bump",
+      "license": "CC-BY-4.0",
+      "species": "Macaca mulatta",
+      "task": "Somatosensory Mechanical Arm Perturbation",
+      "primary_area": "Area 2 (Proprioceptive Cortex)"
+    }
+  ],
+  "synthetic_regimes": [
+    "linear_damped_oscillator",
+    "nonlinear_limit_cycle",
+    "bistable_memory",
+    "driven_recurrent_reservoir"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "mc_maze": {
+    "num_trials": 50,
+    "num_neurons": 30,
+    "duration_s": 60.00000000000006,
+    "bin_width_s": 0.02,
+    "train_trials": 30,
+    "val_trials": 10,
+    "test_trials": 10,
+    "split_disjoint": true
+  },
+  "mc_rtt": {
+    "num_trials": 30,
+    "num_neurons": 25,
+    "duration_s": 30.0,
+    "bin_width_s": 0.02,
+    "train_trials": 21,
+    "val_trials": 4,
+    "test_trials": 5,
+    "split_disjoint": true
+  },
+  "area2_bump": {
+    "num_trials": 40,
+    "num_neurons": 20,
+    "duration_s": 37.99999999999997,
+    "bin_width_s": 0.02,
+    "train_trials": 24,
+    "val_trials": 8,
+    "test_trials": 8,
+    "split_disjoint": true
+  },
+  "synthetic_circuits": {
+    "linear_oscillator": {
+      "num_trials": 20,
+      "num_neurons": 16,
+      "train_trials": 14,
+      "test_trials": 3
+    },
+    "nonlinear_oscillator": {
+      "num_trials": 20,
+      "num_neurons": 16,
+      "train_trials": 14,
+      "test_trials": 3
+    },
+    "bistable_memory": {
+      "num_trials": 20,
+      "num_neurons": 16,
+      "train_trials": 14,
+      "test_trials": 3
+    },
+    "driven_recurrent": {
+      "num_trials": 20,
+      "num_neurons": 16,
+      "train_trials": 14,
+      "test_trials": 3
+    }
+  }
+}

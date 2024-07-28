@@ -1,0 +1,189 @@
+{
+  "timestamp_utc": "2026-10-11T03:31:08Z",
+  "platform_info": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python_version": "3.12.14",
+    "torch_version": "2.14.1"
+  },
+  "total_checks": 16,
+  "passed_checks": 16,
+  "failed_checks": 0,
+  "all_passed": true,
+  "total_duration_s": 0.2899852499976987,
+  "checks": [
+    {
+      "check_id": "CHK_MATH_01",
+      "category": "mathematics",
+      "name": "Point-Process Likelihood & Factorial Math Exactness",
+      "passed": true,
+      "duration_s": 0.0015373330024885945,
+      "details": {
+        "rel_error_k1025": 0.0,
+        "poisson_ll_error": 0.0
+      }
+    },
+    {
+      "check_id": "CHK_DATA_01",
+      "category": "data_contracts",
+      "name": "NLB Dataset Adapters & Split Disjointness",
+      "passed": true,
+      "duration_s": 0.09987087499757763,
+      "details": {
+        "mc_maze": {
+          "num_trials": 20,
+          "num_neurons": 15,
+          "split_clean": true
+        },
+        "mc_rtt": {
+          "num_trials": 10,
+          "num_neurons": 15,
+          "split_clean": true
+        },
+        "area2_bump": {
+          "num_trials": 20,
+          "num_neurons": 15,
+          "split_clean": true
+        }
+      }
+    },
+    {
+      "check_id": "CHK_CIRC_01",
+      "category": "synthetic_circuits",
+      "name": "Controlled Circuit Latent & Spike Generation",
+      "passed": true,
+      "duration_s": 0.11731687499559484,
+      "details": {
+        "linear_oscillator": {
+          "num_sims": 5,
+          "num_neurons": 12,
+          "num_trials": 5
+        },
+        "nonlinear_oscillator": {
+          "num_sims": 5,
+          "num_neurons": 12,
+          "num_trials": 5
+        },
+        "bistable_memory": {
+          "num_sims": 5,
+          "num_neurons": 12,
+          "num_trials": 5
+        },
+        "driven_recurrent": {
+          "num_sims": 5,
+          "num_neurons": 12,
+          "num_trials": 5
+        }
+      }
+    },
+    {
+      "check_id": "CHK_STREAM_01",
+      "category": "streaming",
+      "name": "Causal Streaming Step Execution & Buffer Accumulation",
+      "passed": true,
+      "duration_s": 0.04203929199866252,
+      "details": {
+        "total_bins": 15,
+        "step3_latency_ms": 0.6245000040507875
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "control_id": "NC01",
+      "name": "Temporal Interval Inversion",
+      "description": "Ensures TimeInterval rejects interval where end_time <= start_time.",
+      "caught": true,
+      "exception_type": "ValidationError",
+      "error_message": "2 validation errors for TimeInterval\nstart\n  Field required [type=missing, input_value={'start_s': 10.0, 'end_s': 5.0}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nstop\n  Field required [type=missing, input_value={'start_s': 10.0, 'end_s': 5.0}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+    },
+    {
+      "control_id": "NC02",
+      "name": "Dataset Split Overlap",
+      "description": "Ensures DatasetSplit rejects overlapping trial indices across train and test partitions.",
+      "caught": true,
+      "exception_type": "ValidationError",
+      "error_message": "1 validation error for DatasetSplit\n  Value error, Prohibited overlap between train and test: [3] [type=value_error, input_value={'split_name': 'split_lea...3, 6, 7), intervals=())}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+    },
+    {
+      "control_id": "NC03",
+      "name": "Evaluation Integrity Violation Detection",
+      "description": "Integrity auditor detects non-finite values or negative rates in test evaluation.",
+      "caught": true,
+      "exception_type": "IntegrityViolation",
+      "error_message": "Negative firing rates detected in predictions"
+    },
+    {
+      "control_id": "NC04",
+      "name": "BPS Zero Spike Denominator Contract",
+      "description": "Ensures zero spike count returns None rather than NaN or division by zero.",
+      "caught": true,
+      "exception_type": "ContractAdherence",
+      "error_message": "Returned None as mandated by contract"
+    },
+    {
+      "control_id": "NC05",
+      "name": "Causal Future Leakage Detection",
+      "description": "Auditor detects architecture that illegally uses future inputs to predict past rates.",
+      "caught": true,
+      "exception_type": "CausalLeakageDetected",
+      "error_message": "10 violations detected"
+    },
+    {
+      "control_id": "NC06",
+      "name": "Poisson Negative Input Rejection",
+      "description": "Likelihood math rejects negative spike counts.",
+      "caught": true,
+      "exception_type": "ValueError",
+      "error_message": "All elements of k must be non-negative"
+    },
+    {
+      "control_id": "NC07",
+      "name": "Poisson NaN Input Rejection",
+      "description": "Likelihood math rejects NaN or Inf inputs.",
+      "caught": true,
+      "exception_type": "ValueError",
+      "error_message": "k array must contain non-negative integers"
+    },
+    {
+      "control_id": "NC08",
+      "name": "Observation Mask Channel Dimension Incompatibility",
+      "description": "Ensures ObservationMasks detects when channel_mask shape is invalid.",
+      "caught": true,
+      "exception_type": "ValidationError",
+      "error_message": "1 validation error for ObservationMasks\n  Value error, channel_mask must have shape (1, 10) and torch.bool dtype, got torch.Size([1, 5]), torch.bool [type=value_error, input_value={'batch_size': 1, 'num_ti...ue, True, True, True]])}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/value_error"
+    },
+    {
+      "control_id": "NC09",
+      "name": "Streaming Buffer Invalid Window",
+      "description": "Streaming buffer rejects non-positive max_window_bins.",
+      "caught": true,
+      "exception_type": "ValueError",
+      "error_message": "max_window_bins must be >= 1, got 0"
+    },
+    {
+      "control_id": "NC10",
+      "name": "Procrustes Dimension Mismatch",
+      "description": "OrthogonalProcrustesAligner rejects source and target with mismatched feature dims.",
+      "caught": true,
+      "exception_type": "ValueError",
+      "error_message": "Shape mismatch: Z1 (50, 4) != Z2 (50, 5)"
+    },
+    {
+      "control_id": "NC11",
+      "name": "Recovery Non-Finite Weights",
+      "description": "Recovery rejects corrupt checkpoints containing NaN weights.",
+      "caught": true,
+      "exception_type": "ValueError",
+      "error_message": "Corrupt checkpoint /var/folders/2t/65zz6xzn5s77mnqllrjt8xtc0000gn/T/tmpvijhcr1r.pt: non-finite values detected in parameter 'w'"
+    },
+    {
+      "control_id": "NC12",
+      "name": "Attention Mask Dimension Incompatibility",
+      "description": "SpatiotemporalAttentionModel rejects masks whose shapes do not match inputs.",
+      "caught": true,
+      "exception_type": "RuntimeError",
+      "error_message": "The size of tensor a (15) must match the size of tensor b (10) at non-singleton dimension 1"
+    }
+  ]
+}

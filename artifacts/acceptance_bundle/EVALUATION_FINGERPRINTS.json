@@ -1,0 +1,23 @@
+{
+  "dataset_fingerprints": {
+    "mc_maze": {
+      "sha256": "8e6dd16aac20efe9a96d34975a6745395431f5f35f2f9dcf452bab88f33a45b8",
+      "num_bins": 600,
+      "num_neurons": 10,
+      "total_spikes": 2190
+    },
+    "mc_rtt": {
+      "sha256": "3c78eaa0b45947269f8ffd7de3ade4a1672af3b15a33df2b5ea4e528b0250f02",
+      "num_bins": 250,
+      "num_neurons": 10,
+      "total_spikes": 1085
+    },
+    "area2_bump": {
+      "sha256": "ca4c7c40be1fc741f314b09e7468939eead564822d04cb205a41c913bd184f1b",
+      "num_bins": 475,
+      "num_neurons": 10,
+      "total_spikes": 2375
+    }
+  },
+  "model_verification_hash": "acd038efa9fd1bafbad5ce660234b5c22b9ef361aec3b592ef50094e5d5f9702"
+}
