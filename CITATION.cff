@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you utilize Nocturne in academic research, please cite this repository using the metadata below."
+title: "Nocturne: Neural Population Dynamics Research Laboratory"
+version: "0.1.0"
+date-released: "2026-10-10"
+license: "Apache-2.0"
+repository-code: "https://github.com/Aneesh495/nocturne-neural"
+authors:
+  - family-names: "Parthasarathy"
+    given-names: "Aneesh Krishna"
+keywords:
+  - "computational neuroscience"
+  - "neural dynamics"
+  - "neural population coding"
+  - "differential geometry"
+  - "neural ODE"
+  - "rotary position embeddings"
+  - "closed-loop neurostimulation"
+  - "probabilistic modeling"
